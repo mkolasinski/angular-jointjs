@@ -35,6 +35,11 @@ export class AppComponent implements OnInit {
       size: { width: 100, height: 30},
       attrs: { rect: { fill: 'black'}, text: { text: 'box3', fill: 'white'} }
     });
+    const circle =  new joint.shapes.basic.Circle({
+      position: { x: 150, y: 100},
+      size: { width: 60, height: 60},
+      attrs: { circle: { fill: 'gray', stroke: 'black'}, text: { text: 'circle', fill: 'black'}}
+    });
     const link = new joint.dia.Link({
       source: { id: rect.id },
       target: { id: rect2.id }
@@ -43,7 +48,11 @@ export class AppComponent implements OnInit {
       source: { id: rect2.id},
       target: { id: rect3.id}
     });
-    graph.addCells([rect, rect2, rect3, link, link2]);
+    const link3 = new joint.dia.Link({
+      source: { id: rect3.id},
+      target: { id: circle.id}
+    });
+    graph.addCells([rect, rect2, rect3, circle, link, link2, link3]);
   }
 
 }
