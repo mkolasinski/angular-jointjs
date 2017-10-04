@@ -26,14 +26,14 @@ export class AppComponent implements OnInit {
       attrs: { rect: { fill: 'blue' }, text: { text: 'box1', fill: 'white' } }
     });
     const rect2 = new joint.shapes.basic.Rect({
-      position: { x: 400, y: 150 },
+      position: { x: 500, y: 30 },
       size: { width: 100, height: 30},
-      attrs: { rect: { fill: 'green'}, text: { text: 'box2', fill: 'black'} }
+      attrs: { rect: { fill: 'black' }, text: { text: 'box2', fill: 'white'} }
     });
     const rect3 = new joint.shapes.basic.Rect({
-      position: { x: 200, y: 60 },
+      position: { x: 500, y: 120 },
       size: { width: 100, height: 30},
-      attrs: { rect: { fill: 'green'}, text: { text: 'box3', fill: 'black'} }
+      attrs: { rect: { fill: 'black'}, text: { text: 'box3', fill: 'white'} }
     });
     const link = new joint.dia.Link({
       source: { id: rect.id },
