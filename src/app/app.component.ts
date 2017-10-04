@@ -23,15 +23,27 @@ export class AppComponent implements OnInit {
     const rect = new joint.shapes.basic.Rect({
       position: { x: 100, y: 30 },
       size: { width: 100, height: 30 },
-      attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white' } }
+      attrs: { rect: { fill: 'blue' }, text: { text: 'box1', fill: 'white' } }
     });
-    const rect2 = rect.clone();
-    (rect2 as any).translate(300);
+    const rect2 = new joint.shapes.basic.Rect({
+      position: { x: 400, y: 150 },
+      size: { width: 100, height: 30},
+      attrs: { rect: { fill: 'green'}, text: { text: 'box2', fill: 'black'} }
+    });
+    const rect3 = new joint.shapes.basic.Rect({
+      position: { x: 200, y: 60 },
+      size: { width: 100, height: 30},
+      attrs: { rect: { fill: 'green'}, text: { text: 'box3', fill: 'black'} }
+    });
     const link = new joint.dia.Link({
       source: { id: rect.id },
       target: { id: rect2.id }
     });
-    graph.addCells([rect, rect2, link]);
+    const link2 = new joint.dia.Link({
+      source: { id: rect2.id},
+      target: { id: rect3.id}
+    });
+    graph.addCells([rect, rect2, rect3, link, link2]);
   }
 
 }
